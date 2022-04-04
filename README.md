@@ -1,2 +1,1 @@
-# recipe-web
-Developing the recipe review website
+# recipe_web

@@ -1,0 +1,169 @@
+html,body {
+  min-height: 100vh;
+}
+
+body {
+  background-color:white;
+  display: grid;
+}
+
+/* header */
+
+.navbar .container-fluid{
+  background-color:#B1907F;
+  position:fixed;
+}
+
+.nav-item1{
+  display: flex;
+}
+
+.item{
+  color: white !important;
+  text-decoration: none;
+}
+
+#account{
+  height: 23px;
+}
+
+#signup{
+ left: 400px;
+}
+
+#login{
+ left: 0px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+.search-field {
+  width: 360px;
+  padding: 10px 35px 10px 15px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  outline: none;
+  margin-left: -33px;
+}
+
+.search-button img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+/*footer*/
+
+.btn-primary{
+  background-color:#606060  !important;
+  border-radius: 30px !important;
+  border: none !important;
+}
+
+.footer{
+  background-color:#B1907F;
+  border-top: 2px solid grey;
+  height: 202px;
+  width: 100%;
+  grid-template-rows: auto auto auto auto;
+}
+
+.footer-detail{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.otherinfo{
+  display: grid;
+  line-height: 45px;
+}
+
+.other{
+  color: white;
+  text-decoration: none;
+}
+
+/*social media icon*/
+.s-details{
+  display: flow-root; 
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  height: fit-content;
+  width: auto;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+.fa-snapchat-ghost {
+  background: #fffc00;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+.copyright{
+  background-color: #4D4D4D;
+  color: white;
+  line-height: 55px;
+  text-align: center;
+}
+
+/* login */
+
+.close{
+  text-align: end;
+}
+
+.shadow-2-strong{
+ background-color: #FFFBF1 !important;
+
+}
+
+.form-outline{
+  text-align: start;
+}
+
+.form-check-input{
+  margin-right: 10px;
+}
+
+#bottom-checkbox .mb-4{
+  margin-bottom:none !important;
+}
+
+.forgetpass{
+  text-decoration: none;
+  color: brown;
+  justify-content: end;
+}
+
+
+/* sign up */
+.signup_btn{
+ margin-top: 1.5em;
+}
