@@ -70,7 +70,7 @@ class Account extends Database {
 		return $response;
 	  }
 	
-	  public function login( $name, $email, $password ) {
+	  public function login( $email, $password ) {
 	
 	  }
 	}
