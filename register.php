@@ -16,7 +16,7 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
   // if register is successful
   if ( $register['success'] ) {
     // redirect to home
-    header('location: /');
+    header('location: index.php');
   }
 }
 else{

@@ -3,7 +3,7 @@
   {% include "partials/header.twig" %}
 
 <body>
-  {% include 'partials/navigation.twig' %}
+  {% include "partials/navigation.twig" %}
   <div class="main-container">
     <section class="vh-100" style="background-color: white">
       <div class="container py-5 h-100">
@@ -15,7 +15,7 @@
               <image class="item-close" src="images/close.svg"></a>
               </div>
               <div class="card-body p-5 text-center">
-                <form id="register-form" method="post" action="login.php" autocomplete="off"></form>
+                <form id="register-form" method="post" action="login.php" autocomplete="off">
                 <h1 class="mb-5">LOG IN</h1>
                 {% if login.errors.email %}
                 {% set emailErrorMessage = login.errors.email %}
@@ -24,7 +24,7 @@
     
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typeEmailX-2">Email</label>
-                  <input value="{{email}}" type="email" id="typeEmailX-2" class="form-control form-control-lg {{emailInvalid}}" name="email" placeholder="sample@email.com" autocomplete="new-password">
+                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg {{emailInvalid}}" name="email" placeholder="sample@email.com" autocomplete="new-password">
                   <div class="invalid-feedback">{{emailErrorMessage}}</div>
                 </div>
                 {% if login.errors.password %}
@@ -52,7 +52,7 @@
     
                 <!-- login button -->
                 <button class="btn btn-dark btn-lg btn-block" type="submit" style="border-radius:30px;  width: -webkit-fill-available;">LOGIN</button>
-    
+                  </form>
                 <hr class="my-4">
 
                 <div class="createacc">
