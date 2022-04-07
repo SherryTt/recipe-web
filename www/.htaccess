@@ -1,7 +1,7 @@
 # Database Credentials
 SetEnv dbuser appuser
 SetEnv dbpass password
-SetEnv dbname db_data
+SetEnv dbname recipeDB
 SetEnv dbhost db
 # On Xampp
 # use 
