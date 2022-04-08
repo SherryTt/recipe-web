@@ -12,55 +12,47 @@
             <div class="card shadow-2-strong">
               <div class="close">
                 <a href="home.twig">
-                <image class="item-close" src="images/close.svg"></a>
+                <image class="item-close" src="templates/images/close.svg"></a>
               </div>
               <div class="card-body p-5 text-center">
-                <form id="register-form" method="post" action="register.php" autocomplete="off">
+                <form id="register-form" method="post" action="register.php" >
                 <h1 class="mb-5">SIGN UP</h1>
 
-                {% if register.errors.name %}
-                {% set nameErrorMessage = register.errors.name %}
-                {% set namelInvalid = 'is-invalid' %}
-                {% endif %}
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typeEmailX-2">User name</label>
-                  <input type="text" id="name" class="form-control form-control-lg {{nameInvalid}}" name="name" placeholder="Lora" autocomplete="new-password">
+                  <input type="text" id="name" class="form-control form-control-lg {{nameInvalid}}" name="name" placeholder="Lora" required value="{{name}}">
                   <div class="invalid-feedback">{{nameErrorMessage}}</div>
                 </div>
 
-                {% if register.errors.email %}
-                {% set emailErrorMessage = register.errors.email %}
-                {% set emailInvalid = 'is-invalid' %}
-                {% endif %}
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typeEmailX-2">Email</label>
-                  <input type="email" id="email" class="form-control form-control-lg {{emailInvalid}}" name="email" placeholder="sample@email.com" autocomplete="new-password">
+                  <input type="email" id="email" class="form-control form-control-lg {{emailInvalid}}" name="email" placeholder="sample@email.com" required value="{{email}}">
                   <div class="invalid-feedback">{{emailErrorMessage}}</div>
                 </div>
-                {% if register.errors.password %}
-                {% set passwordErrorMessage = register.errors.password %}
-                {% set passwordInvalid = 'is-invalid' %}
-                {% endif %}
+
     
                 <div class="form-outline mb-4" id="bottom-checkbox">
                   <label class="form-label" for="typePasswordX-2">Password</label>
-                  <input type="password" id="password" class="form-control form-control-lg {{passwordInvalid}}" name="password" placeholder="minimum 8 characters" autocomplete="new-password">
+                  <input type="password" id="password" class="form-control form-control-lg {{passwordInvalid}}" name="password" placeholder="minimum 8 characters" required value="{{password}}">
                   <div class="invalid-feedback">{{passwordErrorMessage}}</div>
                 </div>
-                {% if register.errors.confirm_pass %}
-                {% set passwordErrorMessage = register.errors.confirm_pass %}
-                {% set passwordInvalid = 'is-invalid' %}
-                {% endif %}
+
 
                 <div class="form-outline mb-4" id="bottom-checkbox">
                   <label class="form-label" for="typePasswordX-2">Confirm Password</label>
-                  <input type="password" id="confirm_pass" class="form-control form-control-lg" name="confirm_pass"  placeholder="minimum 8 characters" autocomplete="new-password">
+                  <input type="password" id="confirm_pass" class="form-control form-control-lg" name="confirm_pass"  placeholder="minimum 8 characters" required value="{{confirm_pass}}">
                 </div>
     
-    
-                <!-- login button -->
-                <button class="btn btn-dark btn-lg btn-block signup_btn" type="submit" style="border-radius:30px;  width: -webkit-fill-available;">SUBMIT</button>
                 
+                {% set outcome = result.errors | join(", ") %}
+                <!-- submit button -->
+                <button class="btn btn-dark btn-lg btn-block signup_btn" type="submit" style="border-radius:30px;  width: -webkit-fill-available;">SUBMIT</button>
+                {% if outcome | length > 0 %}
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{ outcome }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+                {% endif %}
                 </form>
               </div>
             </div>

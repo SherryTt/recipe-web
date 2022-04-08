@@ -33,7 +33,7 @@ class Account extends Database {
 	}
 
 	//Confirm pass validation
-	if ($_POST['password'] != $_POST['confirm_pass']) {
+	if ($_POST["password"] != $_POST["confirm_pass"]) {
   		$errors["confirm_pass"] = "Password and Confirm password should match!";   
 }
 
@@ -43,7 +43,7 @@ class Account extends Database {
 		VALUES( ?, ?, ?)";
 		$statement = $this -> dbconnection -> prepare( $query );
 		$hashed = password_hash( $password,PASSWORD_DEFAULT );
-		$statement -> bind_param( "sss" , $name, $email, $hash );
+		$statement -> bind_param( "sss" , $name, $email, $hashed );
 		//Try to excute statement
 		try{
 			if( !$statement -> execute()) {
