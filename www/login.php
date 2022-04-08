@@ -18,6 +18,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ) {
       session_start();
       $_SESSION["email"] = $user_email;
       $_SESSION["account_id"] = $result["id"];
+      echo "success";
     }
   }
 }

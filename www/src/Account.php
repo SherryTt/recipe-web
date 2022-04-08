@@ -80,7 +80,7 @@ class Account extends Database {
 
 		$query = '
 		SELECT
-		id , name, email,password
+		user_ID , name, email,password
 		FROM user
 		WHERE email = ?
     	';
@@ -103,6 +103,7 @@ class Account extends Database {
             $response["success"] = true;
             $response["id"] = $account_data["id"];
             $response["email"] = $account_data["email"];
+			echo "success";
             return $response;
           }
           else {
