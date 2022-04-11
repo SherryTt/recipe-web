@@ -80,7 +80,7 @@ class Account extends Database {
 
 		$query = "
 		SELECT
-		user_ID , name, email,password
+		user_ID ,name, email,password
 		FROM user
 		WHERE email = ?
     	";
