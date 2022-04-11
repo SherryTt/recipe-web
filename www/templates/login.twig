@@ -15,27 +15,18 @@
               <image class="item-close" src="images/close.svg"></a>
               </div>
               <div class="card-body p-5 text-center">
-                <form id="register-form" method="post" action="login.php" autocomplete="off">
                 <h1 class="mb-5">LOG IN</h1>
-                {% if login.errors.email %}
-                {% set emailErrorMessage = login.errors.email %}
-                {% set emailInvalid = 'is-invalid' %}
-                {% endif %}
     
                 <div class="form-outline mb-4">
+                  <form id="register-form" method="post" action="login.php">
                   <label class="form-label" for="typeEmailX-2">Email</label>
                   <input type="email" id="typeEmailX-2" class="form-control form-control-lg {{emailInvalid}}" name="email" placeholder="sample@email.com" autocomplete="new-password">
-                  <div class="invalid-feedback">{{emailErrorMessage}}</div>
                 </div>
-                {% if login.errors.password %}
-                {% set passwordErrorMessage = login.errors.password %}
-                {% set passwordInvalid = 'is-invalid' %}
-                {% endif %}
-    
+
                 <div class="form-outline" id="bottom-checkbox">
                   <label class="form-label" for="typePasswordX-2">Password</label>
                   <input type="password" id="typePasswordX-2" class="form-control form-control-lg {{passwordInvalid}}" name="password" placeholder="minimum 8 characters" autocomplete="new-password">
-                  <div class="invalid-feedback">{{passwordErrorMessage}}</div>
+                  {% set outcome = result.errors | join(", ") %}
                 </div>
     
                  <!-- remember me and reset pass-->
@@ -52,7 +43,13 @@
     
                 <!-- login button -->
                 <button class="btn btn-dark btn-lg btn-block" type="submit" style="border-radius:30px;  width: -webkit-fill-available;">LOGIN</button>
-                  </form>
+                {% if outcome | length > 0 %} 
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                  {{ outcome }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+              {% endif %}   
+              </form>
                 <hr class="my-4">
 
                 <div class="createacc">
@@ -75,6 +72,7 @@
 
   </div>
   {% include "partials/footer.twig" %}
+  {% include "partials/script.twig" %}
 </body>
 
 </html>
