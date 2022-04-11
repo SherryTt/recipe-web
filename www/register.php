@@ -16,15 +16,12 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ) {
   $user_email = $_POST["email"];
   $user_password = $_POST["password"];
   $confirm_pass = $_POST["confirm_pass"];
-  echo "email=$user_email,password = $user_password";
-}
-  /*
-   // check if user_email and user_password is not empty
+  //check if user_email and user_password is not empty
    if(( strlen($user_email) > 0 && strlen($user_password) > 0 ) && ( $user_password == $confirm_pass)){
     $result = $account -> create( $user_name,$user_email, $user_password,$confirm_pass);
     }
   }
-*/
+
 $loader = new \Twig\Loader\FilesystemLoader("templates");
 $twig = new Twig\Environment( $loader,["cache" => false] );
 
