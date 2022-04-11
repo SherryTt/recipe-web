@@ -35,7 +35,7 @@ class Account extends Database {
 	//Confirm pass validation
 	if ($_POST["password"] != $_POST["confirm_pass"]) {
   		$errors["confirm_pass"] = "Password and Confirm password should match!";   
-}
+	}
 
 	if(count($errors) == 0) {
 		//Create an account
@@ -78,12 +78,12 @@ class Account extends Database {
 		$errors = array();
 		$response = array();
 
-		$query = '
+		$query = "
 		SELECT
 		user_ID , name, email,password
 		FROM user
 		WHERE email = ?
-    	';
+    	";
 	
 	$statement = $this -> dbconnection -> prepare( $query );
     $statement -> bind_param( "s", $email );
@@ -101,9 +101,8 @@ class Account extends Database {
           $account_data = $result -> fetch_assoc();
           if( password_verify( $password, $account_data["password"] ) ) {
             $response["success"] = true;
-            $response["id"] = $account_data["id"];
+            $response["user_ID"] = $account_data["user_ID"];
             $response["email"] = $account_data["email"];
-			echo "success";
             return $response;
           }
           else {
