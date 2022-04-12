@@ -20,12 +20,12 @@
                 <div class="form-outline mb-4">
                   <form id="register-form" method="post" action="login.php">
                   <label class="form-label" for="typeEmailX-2">Email</label>
-                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg {{emailInvalid}}" name="email" placeholder="sample@email.com" autocomplete="new-password">
+                  <input class="form-control form-control-lg" id="typeEmailX-2" name="email" type="email" placeholder="sample@email.com" required value="{{email}}">
                 </div>
 
                 <div class="form-outline" id="bottom-checkbox">
                   <label class="form-label" for="typePasswordX-2">Password</label>
-                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg {{passwordInvalid}}" name="password" placeholder="minimum 8 characters" autocomplete="new-password">
+                  <input class="form-control form-control-lg" id="typePasswordX-2" type="password" name="password" placeholder="minimum 8 characters" required value="{{password}}">
                   {% set outcome = result.errors | join(", ") %}
                 </div>
     
