@@ -13,7 +13,7 @@ class Account extends Database {
     $this -> dbconnection = parent::getConnection();
   }
 
-  public function create($name, $email, $password,$confirm_pass){
+  public function create($name, $email, $password){
 	$errors = array();
 	$response = array();
 
@@ -31,19 +31,19 @@ class Account extends Database {
 	if(strlen($password) < 8 ) {
 		$errors["password"] = "Password must be longer than 8 characters";
 	}
-
+/*
 	//Confirm pass validation
-	if ($_POST["password"] != $_POST["confirm_pass"]) {
+	if ( !strcmp($password,$confirm_pass)) {
   		$errors["confirm_pass"] = "Password and Confirm password should match!";   
-	}
+	}*/
 
 	if(count($errors) == 0) {
 		//Create an account
-		$query = "INSERT INTO user (name,email,password) 
-		VALUES( ?, ?, ?)";
+		$query = "INSERT INTO user (name,email,password,created,updated) 
+		VALUES( ?,?,?, NOW(), NOW())";
 		$statement = $this -> dbconnection -> prepare( $query );
 		$hashed = password_hash( $password,PASSWORD_DEFAULT );
-		$statement -> bind_param( "sss" , $name, $email, $hashed );
+		$statement -> bind_param( "sss" ,$name,$email, $hashed );
 		//Try to excute statement
 		try{
 			if( !$statement -> execute()) {
@@ -80,7 +80,7 @@ class Account extends Database {
 
 		$query = "
 		SELECT
-		user_ID ,name, email,password
+		user_ID , email,password
 		FROM user
 		WHERE email = ?
     	";
@@ -104,6 +104,7 @@ class Account extends Database {
             $response["user_ID"] = $account_data["user_ID"];
             $response["email"] = $account_data["email"];
             return $response;
+			echo "success";
           }
           else {
             throw new Exception("Password is incorrect");
