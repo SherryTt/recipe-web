@@ -3,8 +3,7 @@ require('vendor/autoload.php');
 
 use textreview\Session;
 
-Session::unset('auth');
-Session::emptyAll();
+Session::unset('');
 
 
 //Back to home page
