@@ -5,7 +5,6 @@ require("vendor/autoload.php");
 use textreview\Session;
 
 
-$user_name = $_SESSION["name"];
 
 
 $loader = new \Twig\Loader\FilesystemLoader("templates");
@@ -18,7 +17,6 @@ echo $twig -> render(
   [
     "page_title" => "Userdashboard to TextReview", 
     "site_name" => $site_name,
-	"user_name" => $user_name
 
 ]);
 ?>
