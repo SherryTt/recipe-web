@@ -2,7 +2,7 @@
 
   <!--<nav class="navbar navbar-light bg-brown">-->
   <div class="container-fluid-nav">
-
+  
     <!-- humberger menu with side nav -->
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -14,33 +14,16 @@
         <a href="#">Others</a>
         
       </div>
-        <span style="font-size:80px;cursor:pointer" onclick="openNav()">&#9776;</span>
-    
-    
-
-      <script>  
-        /* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-        function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
-        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-        }
-
-        /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-        function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        document.getElementById("main").style.marginLeft = "0";
-        document.body.style.backgroundColor = "white";
-        }
-      </script>
-
+     
+        <span style="font-size:70px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
 
     <!-- logo -->
     <div class="logo">
-      <a class="logoimg" href="../../index.php">
+      <a href="../../index.php">
       <img src="../templates/images/logo.png"  alt=""></a>
     </div>
+
 
 
     <!-- search bar/login -->
@@ -56,7 +39,7 @@
     <!-- login/signup -->
     <div class="nav-item1">
       <a class="item" id="signup" href="../../register.php">JOIN US</a>
-      <p class="item">/</p>
+      <p class="item"> / </p>
       <a class="item" id="login" href="../../login.php">LOGIN</a>
       <svg class="item" id="account" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
       <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
