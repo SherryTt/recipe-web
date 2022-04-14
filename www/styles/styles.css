@@ -1,12 +1,8 @@
-html,
-body {
+html,body {
     min-height: 100vh;
-}
-
-body {
-    background-color: white;
     display: grid;
     font-family: "Lato", sans-serif;
+    transition: background-color .5s;
 }
 
 
@@ -45,13 +41,18 @@ body {
     padding-top: 60px;
 }
 
-.sidenav a {
+.sidenav a ,h3{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: black;
     display: block;
     transition: 0.3s;
+}
+
+.sidebar-title{
+    font-weight: bold;
+    text-decoration:underline;
 }
 
 .sidenav a:hover {
@@ -73,6 +74,14 @@ body {
     .sidenav a {
         font-size: 18px;
     }
+}
+
+@media screen and (max-width: 450px){
+
+    .search-field {
+        width: 30vh;
+    }
+
 }
 
 
@@ -103,10 +112,9 @@ body {
 }
 
 .search-field {
-    width: 60vh;
+    width: 100%;
     padding: 10px 35px 10px 15px;
     border: none;
-    border-radius: 100px;
     outline: none;
 }
 
