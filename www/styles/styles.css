@@ -12,24 +12,24 @@ body {
 
 /* navigation */
 
-.container-fluid-nav {
-    display: flex;
+.container_nav {
     background-color: #5C4033;
-    align-items: center;
-    justify-content: space-around;
 }
 
-.nav-left {
-    display: flex;
-}
 
 .logo {
-    max-width: 25%;
+    width: 220px;
+    height: 200px;
+    overflow: hidden;
+    position:relative;
 }
 
 .logo img {
-    width: 200px;
-    height: 200px;
+    width: 305px;
+    height: auto;
+    position:absolute;
+    top: -50px;
+    left:-45px;
 }
 
 .sidenav {
@@ -75,13 +75,10 @@ body {
     }
 }
 
-.all {
-    align-items: center;
-}
 
 .nav-item1 {
-    display: flex;
     font-size: 20px;
+    white-space: break-spaces
 }
 
 .item {
@@ -102,12 +99,11 @@ body {
 }
 
 .form {
-    display: flex;
     flex-direction: row;
 }
 
 .search-field {
-    width: 400px;
+    width: 60vh;
     padding: 10px 35px 10px 15px;
     border: none;
     border-radius: 100px;
