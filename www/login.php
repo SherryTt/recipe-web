@@ -31,7 +31,7 @@ $site_name = "TextReview";
 echo $twig -> render(
   "login.twig", 
   [
-    "page_title" => "Login to TextReview", 
+    "page_title" => "Login", 
     "site_name" => $site_name,
     "result" => $result,
     "email" => $user_email,
