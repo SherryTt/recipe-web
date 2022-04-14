@@ -19,6 +19,7 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ) {
   //check if user_email and user_password is not empty
    if(( strlen($user_email) > 0 && strlen($user_password) > 0 ) /*&& ( strcmp($user_password,$confirm_pass))*/){
     $result = $account -> create( $user_name, $user_email, $user_password);
+    header("Location:login.php");
 
     }
   }
