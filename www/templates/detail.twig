@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+{% include "partials/header.twig"%}
+
+<body>
+  {% include "partials/navigation.twig"%}
+
+  
+  <div class="row main-1" style="margin-top: 60px; margin: 0 auto; width: 1000px; padding: 50px 0; overflow: hidden;">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <img class="img-fluid" src="recipe_image/{{recipe.picture}}" style="width:442px;height:249px;">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{recipe.recipe_Name}}</h5>
+          <p class="card-text">{{recipe.star_rated}}</p>
+          <div class="info_c">
+            <p>Prep: <span>{{recipe.recipe_prep}}</span></p>
+            <p>Cook: <span>{{recipe.recipe_cook}}</span></p>
+            <p>Total: <span>{{recipe.recipe_total}}</span></p>
+            <p>Calories: <span>{{recipe.recipe_calories}}</span></p>
+            <p>Servings: <span>{{recipe.recipe_servings}}</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--User-->
+  <div class="author">
+    <div class="imgsa">
+      <img src="/uerImage/{{ recipe.user_image }}" alt="">
+      <span class="entry-name">&nbsp;&nbsp;&nbsp;By {{recipe.user}}</span>
+    </div>
+
+
+    <!--Recipe Description-->
+    <div class="author_info" style="margin-top:20px;border-top: 2px solid #ccc;padding-top: 20px;">
+      {{recipe.recipe_description}}
+    </div>
+  </div>
+
+  <!--Recipe Ingredient-->
+  <div class="recipe_ifo recipe_ingre">
+    <div class="titlee">
+      Ingredient
+    </div>
+    <div class="ccc">
+      {% autoescape false %}
+      {{recipe.recipe_ingredient }}
+      {% endautoescape %}
+    </div>
+  </div>
+
+
+  <!--Recipe Direction-->
+
+  <div class="recipe_ifo">
+    <div class="titlee">
+      Direction
+    </div>
+    <div class="ccc">
+      {% autoescape false %}
+      {{recipe.recipe_direction}}
+      {% endautoescape %}
+    </div>
+  </div>
+
+  <!--review-->
+
+  <div class="review comments">
+    <div class="c_title">Reviews & rating</div>
+  </div>
+
+  {% for review in reviewResult %}
+  <div class="coms_c">
+    <div class="asd_author">
+      <img src="/uerImage/{{review.picture}}" alt="">
+      <span>By {{review.user}}</span>
+      <span style="font-weight: 500;">{{review.review_date}}</span>
+
+    </div>
+    <div class="com_cons">
+      {{review.review_description}}
+    </div>
+  </div>
+  
+  
+
+  </div>
+  {% endfor %}
+
+  {% include "partials/footer.twig" %}
+  {% include "partials/script.twig" %}
+</body>
+
+</html>

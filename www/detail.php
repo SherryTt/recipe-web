@@ -16,7 +16,7 @@ $twig = new Twig\Environment($loader, ["cache" => false]);
 
 
 echo $twig -> render(
-  "menudetail.twig",[
+  "detail.twig",[
 
   "recipe_Name" => "TextReview $recipe_Name",
   "recipe" => $detail,
