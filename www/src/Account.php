@@ -13,7 +13,7 @@ class Account extends Database {
     $this -> dbconnection = parent::getConnection();
   }
 
-  public function create($name, $email, $password){
+  public function create($name, $email, $password,$confirm_pass){
 	$errors = array();
 	$response = array();
 
@@ -31,11 +31,11 @@ class Account extends Database {
 	if(strlen($password) < 8 ) {
 		$errors["password"] = "Password must be longer than 8 characters";
 	}
-/*
+
 	//Confirm pass validation
-	if ( !strcmp($password,$confirm_pass)) {
-  		$errors["confirm_pass"] = "Password and Confirm password should match!";   
-	}*/
+	if ( $password != $confirm_pass) {
+  		$errors["confirm_pass"] = "Password and Confirm password should match";   
+	}
 
 	if(count($errors) == 0) {
 		//Create an account
