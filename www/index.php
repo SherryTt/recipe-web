@@ -20,7 +20,7 @@ $twig = new Twig\Environment($loader,["cache" => false]);
 
 echo $twig -> render(
   "home.twig",
-  ["page_title" => "Home",
+  ["page_title" => "MyRecipe",
   "recipe" => $items,
   "userResult" => $userResult,
   "sliderResult" => $sliderResult

@@ -17,7 +17,7 @@ $twig = new Twig\Environment($loader, ["cache" => false]);
 
 echo $twig -> render(
   "detail.twig",[
-
+  "page_title" => "MyRecipeDetail",
   "recipe_Name" => "TextReview $recipe_Name",
   "recipe" => $detail,
   "reviewResult" => $reviewResult
