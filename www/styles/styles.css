@@ -1,36 +1,31 @@
-html,
-body {
+html,body {
     min-height: 100vh;
-}
-
-body {
-    background-color: white;
     display: grid;
     font-family: "Lato", sans-serif;
+    transition: background-color .5s;
 }
 
 
 /* navigation */
 
-.container-fluid-nav {
-    display: flex;
+.container_nav {
     background-color: #5C4033;
-    align-items: center;
-    max-height: 40%;
-    justify-content: space-around;
 }
 
-.nav-left {
-    display: flex;
-}
 
 .logo {
-    max-width: 25%;
+    width: 220px;
+    height: 200px;
+    overflow: hidden;
+    position:relative;
 }
 
 .logo img {
-    width: 100%;
-    object-fit: contain;
+    width: 305px;
+    height: auto;
+    position:absolute;
+    top: -50px;
+    left:-45px;
 }
 
 .sidenav {
@@ -46,13 +41,18 @@ body {
     padding-top: 60px;
 }
 
-.sidenav a {
+.sidenav a ,h3{
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
     color: black;
     display: block;
     transition: 0.3s;
+}
+
+.sidebar-title{
+    font-weight: bold;
+    text-decoration:underline;
 }
 
 .sidenav a:hover {
@@ -76,13 +76,18 @@ body {
     }
 }
 
-.all {
-    align-items: center;
+@media screen and (max-width: 450px){
+
+    .search-field {
+        width: 30vh;
+    }
+
 }
 
+
 .nav-item1 {
-    display: flex;
     font-size: 20px;
+    white-space: break-spaces
 }
 
 .item {
@@ -103,15 +108,13 @@ body {
 }
 
 .form {
-    display: flex;
     flex-direction: row;
 }
 
 .search-field {
-    width: 400px;
+    width: 100%;
     padding: 10px 35px 10px 15px;
     border: none;
-    border-radius: 100px;
     outline: none;
 }
 

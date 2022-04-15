@@ -1,11 +1,13 @@
 <!--Main-Nav-->
 
   <!--<nav class="navbar navbar-light bg-brown">-->
-  <div class="container-fluid-nav">
-  
+  <div class="container-fluid container_nav">
+    <div class="row align-items-center justify-content-start">
+    <div class="col d-flex align-items-center">
     <!-- humberger menu with side nav -->
       <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <h3 class="sidebar-title">Menu</h3>
         <a href="#">Popular Menu</a>
         <a href="#">Top Rated</a>
         <a href="#">Vegetable</a>
@@ -15,36 +17,41 @@
         
       </div>
      
-        <span style="font-size:70px;cursor:pointer" onclick="openNav()">&#9776;</span>
+        <span class="ms-5" style="font-size:70px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
 
     <!-- logo -->
-    <div class="logo">
+    <div class="logo ms-5">
       <a href="../../index.php">
-      <img src="../templates/images/logo.png"  alt=""></a>
+      <img src="../templates/images/logo.png" alt=""></a>
+    </div>
     </div>
 
-
-
+    <div class="col">
     <!-- search bar/login -->
     <div class="search1">
-      <form action="/" method="GET" class="form">
+      <form action="/" method="GET" class="form d-flex">
         <input type="search" placeholder="Search" class="search-field" />
         <button type="submit" class="search-button">
         <img src="../templates/images/search.svg">
         </button>
       </form>
     </div>
+    </div>
 
+    <div class="col">
     <!-- login/signup -->
-    <div class="nav-item1">
-      <a class="item" id="signup" href="../../register.php">JOIN US</a>
+    <div class="nav-item1 d-flex justify-content-end me-5">
+      <a class="item" id="signup" href="../../register.php">SIGN UP</a>
       <p class="item"> / </p>
       <a class="item" id="login" href="../../login.php">LOGIN</a>
       <svg class="item" id="account" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
       <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
       <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
       </svg>
+    </div>
+    </div>
+
     </div>
 
   </div>

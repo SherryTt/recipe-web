@@ -15,7 +15,7 @@ $site_name  = "TextReview";
 echo $twig -> render(
   "userdashboard.twig",
   [
-    "page_title" => "Userdashboard to TextReview", 
+    "page_title" => "Mypage", 
     "site_name" => $site_name,
 
 ]);
