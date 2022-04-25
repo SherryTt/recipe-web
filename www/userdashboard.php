@@ -16,7 +16,7 @@ echo $twig -> render(
   [
     "page_title" => "Mypage", 
     "site_name" => $site_name,
-    "userResult" => $userResult,
+
 
 ]);
 ?>
