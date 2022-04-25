@@ -4,6 +4,7 @@ namespace textreview;
 use textreview\Database;
 use Exception;
 
+
 class Search extends Database {
   private $dbconnection;
   public function __construct()
@@ -40,7 +41,7 @@ class Search extends Database {
       if( !$statement -> execute() ) {
         throw new Exception("query error");
       }
-      else {
+	  else {
         $search_result = array();
         $result = $statement -> get_result();
         while( $row = $result -> fetch_assoc() ) {
@@ -54,4 +55,6 @@ class Search extends Database {
     }
   }
 }
+
+
 ?>

@@ -7,13 +7,22 @@
     {% include "partials/navigation.twig"%} 
 
 <!--Recipe-->
-<div class = "container">
-<h3>{{total}} items matches results for "{{search_term}}"</h3>
+	<div class = "container">
+
+		<h3 class="m-4">{{total}} items matches results for "{{search_term}}"</h3>
+
+	{% if total == 0%}
+		<div class = "text-center">
+			<img src="../templates/images/noresult.png" style="margin-top: 270px;" >
+		</div>
+	{% endif %}
+	
 	<div class = "row">
 		{% for item in result %}
 			<div class = "d-block m-4 text-center">
 			
 				<div class="card_body" >
+					{{noResult}}
 						<img src="recipe_image/{{item.picture }}" class="card-img-top recipe_image" alt="recipe cover for {{recipe.recipe_Name}}";>
 						<div class="card-body">
 							<h5 class="card-title">{{item.recipe_Name}}</h5>
