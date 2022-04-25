@@ -3,7 +3,7 @@
   {% include "partials/header.twig" %}
 
 <body>
-  {% include "partials/navigation.twig" %}
+  {% include "partials/navigation2.twig" %}
   <div class="main-container" style="color: grey;">
     <section class="vh-100" style="background-color: white">
      <!-- <div class="container py-5 h-100"> -->
@@ -14,9 +14,10 @@
    
               <div class="card-body p-5" style="text-align:center;">
                 <div class="user">
-                <img class="user-img" src="/uerImage/{{user.user_image}}" style="width: 70px; height:70px;">
+                
+                <img class="user-img" src="/uerImage/{{items.user_image}}" style="width: 70px; height:70px;">
                 <div class="user-info">
-                <h1>Welcomback,{{user.name}}</h1>
+                <h1>Welcomback,{{items.user.name}}</h1>
                 <img class="user-detail" src="/templates/images/people.svg">
                 <img class="user-detail" src="/templates/images/heart.svg">
                 <img class="user-detail" src="/templates/images/pen.svg">
