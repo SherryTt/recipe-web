@@ -3,9 +3,10 @@ require('vendor/autoload.php');
 
 use textreview\Session;
 
-Session::unset('');
+Session::unset("email");
+Session::unset("account_id");
 
 
 //Back to home page
-header('location: home.php');
+header('location: index.php');
 ?>
