@@ -10,17 +10,19 @@
         <div class="row  justify-content-center align-items-center h-100">
          <!-- <div class="col-12 col-md-8 col-lg-6 col-xl-5">-->
             <div class="card">
-              
+            
+   
               <div class="card-body p-5" style="text-align:center;">
                 <div class="user">
-                <img class="user-img" src="/templates/images/account.png" style="width: 70px; height:70px;">
+                <img class="user-img" src="/uerImage/{{user.user_image}}" style="width: 70px; height:70px;">
                 <div class="user-info">
-                <h1>Welcomback,</h1>
+                <h1>Welcomback,{{user.name}}</h1>
                 <img class="user-detail" src="/templates/images/people.svg">
                 <img class="user-detail" src="/templates/images/heart.svg">
                 <img class="user-detail" src="/templates/images/pen.svg">
                 </div>
                 </div>  
+               
                 <!-- Account menu -->
                   <div class="menu-container row align-items-start ">
                     <div class="col menu"><a href="#">ACCOUNT INFO</a>

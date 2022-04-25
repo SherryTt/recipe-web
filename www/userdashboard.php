@@ -3,8 +3,12 @@ session_start();
 require("vendor/autoload.php");
 
 use textreview\Session;
+use textreview\Recipe;
 
+$user_ID = $_GET['user_ID'];
 
+$recipe = new recipe();
+$userResult = $recipe -> getUser();
 
 
 $loader = new \Twig\Loader\FilesystemLoader("templates");
@@ -17,6 +21,7 @@ echo $twig -> render(
   [
     "page_title" => "Mypage", 
     "site_name" => $site_name,
+    "userResult" => $userResult,
 
 ]);
 ?>
