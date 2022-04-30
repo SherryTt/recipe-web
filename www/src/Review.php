@@ -26,12 +26,9 @@ $userid =22;
 $times = date("Y-m-d H:i:s");
 
 $query1 = "
-    INSERT INTO review (review_description,review_date,review_rated) VALUES ('{$content}','{$times}','{$rate}')
+    INSERT INTO review (review_description,review_date,review_rated) 
+    VALUES ('{$content}','{$times}','{$rate}')
 ";
-
-
-
-
 
 
 
@@ -43,12 +40,14 @@ try{
     $statement1 -> execute();
     $review_ID = mysqli_insert_id($this->dbconnection);
     
-$query2 = "INSERT INTO review_user (review_ID,user_ID) VALUES ('{$review_ID}','{$userid}')";
+$query2 = "INSERT INTO review_user (review_ID,user_ID) 
+VALUES ('{$review_ID}','{$userid}')";
 
 
 
 
-$query3 = "INSERT INTO recipe_review (review_ID,recipe_ID) VALUES ('{$review_ID}','{$recipeid}')";
+$query3 = "INSERT INTO recipe_review (review_ID,recipe_ID) 
+VALUES ('{$review_ID}','{$recipeid}')";
 
     $statement2 =$this -> dbconnection -> prepare($query2);
     $statement3 =$this -> dbconnection -> prepare($query3);
