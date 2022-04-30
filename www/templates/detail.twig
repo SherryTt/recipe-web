@@ -83,8 +83,12 @@
     <div class="asd_author">
       <img src="/uerImage/{{review.picture}}" alt="">
       <span>By {{review.user}}</span>
-      <span style="font-weight: 500;">{{review.review_date}}</span>
+      
+      <span style="font-weight: 500;margin-left: 30px">{{review.review_date}}</span>
 
+    </div>
+    <div style = "margin-left: 50px;">
+    <span >{{review.review_rated}}</span>
     </div>
     <div class="com_cons">
       {{review.review_description}}
@@ -105,7 +109,7 @@
             <input name="rate" class="form-control rate" placeholder="0-5" type="number" max="5" min="0" step="0.1"/>
             <p>content</p>
             <textarea name="content" class="form-control"></textarea>
-            <div class ="mt20">
+            <div style ="margin-top:20px;">
             <button class="btn btn-primary">SUBMIT</button>
             </div>
         </form>
@@ -116,9 +120,7 @@
             margin:0 auto;
             padding:0 0 50px 0;
         }
-        .mt20{
-            margin-top:20px;
-        }
+        
         .rate{
             width:150px!important;
         }

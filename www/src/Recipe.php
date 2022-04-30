@@ -92,7 +92,10 @@ public function getSlider(){
         recipe_description,
         filename 
         from recipe 
-        JOIN image ON recipe_ID=image_ID";
+        JOIN image ON recipe_ID=image_ID
+        GROUP BY recipe_ID
+        ORDER BY  RAND()
+        ";
 
     try{
       $statement =$this -> dbconnection -> prepare($query);
