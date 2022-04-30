@@ -9,7 +9,7 @@ $recipe_ID = $_GET['id'];
 $recipe = new recipe();
 $detail = $recipe -> getDetail($recipe_ID);
 $recipe_Name = $detail['recipe_Name'];
-$reviewResult = $recipe -> getReview($detail['recipe_ID']);
+$reviewResult = $recipe -> getReview($recipe_ID);
 
 $loader = new \Twig\Loader\FilesystemLoader("templates");
 $twig = new Twig\Environment($loader, ["cache" => false]);

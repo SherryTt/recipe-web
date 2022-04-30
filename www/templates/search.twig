@@ -34,7 +34,26 @@
 				  </div>
 			  {% endfor %}
 		  </div>
-	  </div>
+	  </div> 
+
+	   {# <div class = "container">
+        <div class = "row">
+            {% for item in result %}
+                <div class = "col-md-4">
+                    <div class="card_body" >
+                            <img src="recipe_image/{{item.picture }}" class="card-img-top recipe_image" alt="recipe cover for {{recipe.recipe_Name}}";>
+                            <div class="card-body">
+                                <h5 class="card-title">{{item.recipe_Name}}</h5>
+                                <P class="card-title">{{item.star_rated}}</p>
+                                <P class="card-title">By {{item.user}}</p> 
+                                <a href="detail.php?id={{item.recipe_ID}}" class="btn btn-primary">View Detail</a>
+                                
+                          </div>
+                        </div>
+                      </div>
+                  {% endfor %}
+              </div>
+          </div> #}
 
 	  {% include "partials/footer.twig" %}
 	  {% include "partials/script.twig" %}

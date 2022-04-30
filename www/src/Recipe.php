@@ -283,28 +283,17 @@ public function getReview($recipe_id){
     }
     
     
-    $query = "
-      SELECT
-          review.review_ID,
-          review_description,
-          review_rated,
-          review_date,
-          user.user_ID ,
-          user.name AS user,
-          user.user_image AS picture
-      FROM review
-
-            INNER JOIN review_user
-            ON review.review_ID = review_user.user_ID
-            
-            INNER JOIN user
-            ON review_user.user_ID = user.user_ID
-
-            WHERE review.review_ID IN ({$reviewId})
-
-        
-      ";
     
+    $query = "
+              SELECT *,
+              user.user_image AS picture,
+              user.name AS user 
+              from recipe_review AS rcr
+              JOIN review AS r ON r.review_ID = rcr.review_ID
+              JOIN review_user AS ru ON ru.review_ID = rcr.review_ID
+              JOIN `user` ON `user`.user_ID = ru.user_ID
+              WHERE rcr.recipe_ID = {$recipe_id}
+              ";
   
     try{
       $statement =$this -> dbconnection -> prepare($query);

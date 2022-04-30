@@ -96,6 +96,34 @@
   </div>
   {% endfor %}
 
+  
+<div class="comment_form">
+        <form action="review.php" method="get">
+            <input hidden name="id" value="{{recipe.recipe_ID}}" />
+            <h2>WRITE REVIEW</h2>
+            <p>Your rated</p>
+            <input name="rate" class="form-control rate" placeholder="0-5" type="number" max="5" min="0" step="0.1"/>
+            <p>content</p>
+            <textarea name="content" class="form-control"></textarea>
+            <div class ="mt20">
+            <button class="btn btn-primary">SUBMIT</button>
+            </div>
+        </form>
+    </div>
+    <style>
+        .comment_form{
+            width:800px;
+            margin:0 auto;
+            padding:0 0 50px 0;
+        }
+        .mt20{
+            margin-top:20px;
+        }
+        .rate{
+            width:150px!important;
+        }
+    </style>
+    
   {% include "partials/footer.twig" %}
   {% include "partials/script.twig" %}
 </body>
