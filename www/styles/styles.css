@@ -409,3 +409,20 @@ html,body {
     display: inline-block;
     width: 45%;
 }
+
+/* user dashbord */
+
+.wrapTop{
+    justify-content: space-between;
+
+}
+
+.topSec{
+    justify-content: space-between;
+
+}
+
+.titlePro{
+    justify-content: center;
+    background-color: brown;
+}
