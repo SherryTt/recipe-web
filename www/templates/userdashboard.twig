@@ -15,16 +15,19 @@
               <div class="card-body p-5" style="text-align:center;">
                 <div class="user">
                 
-                <img class="user-img" src="/uerImage/{{items.user_image}}" style="width: 70px; height:70px;">
+                <img class="user-img" src="/www/uerImage/{{user.user_image}}" style="width: 70px; height:70px;">
                 <div class="user-info">
-                <h1>Welcomback,{{items.user.name}}</h1>
+                <h1>Welcomback,{{name}}</h1>
+                
                 <img class="user-detail" src="/templates/images/people.svg">
+                <h2>{{user_follower}}</h2>
                 <img class="user-detail" src="/templates/images/heart.svg">
                 <img class="user-detail" src="/templates/images/pen.svg">
                 </div>
                 </div>  
                
                 <!-- Account menu -->
+                <!--
                   <div class="menu-container row align-items-start ">
                     <div class="col menu"><a href="#">ACCOUNT INFO</a>
                     
@@ -38,26 +41,30 @@
                     <div class="col menu">
                       <a href="#">POST MY RECIPE</a>
                     </div>
-                  </div>
+                  </div>-->
 
-                <div class="mb-4">
+                <div class="mb-4 mt-5">
                   <label class="label-item" for="typeEmailX-2">NAME</label>
-                  <input type="name" id="typeEmailX-2" class="form-syle form1" required/>
+                  <h3>{{name}}</h3>
+                  <!--<input type="name" id="typeEmailX-2" class="form-syle form1" required/>-->
                 </div>
     
                 <div class="mb-4">
                   <label class="label-item" for="typePasswordX-2">EMAIL ADDRESS</label>
-                  <input type="email" id="typePasswordX-2" class="form-syle form1" required/>
+                  <h3>{{email}}</h3>
+                 <!-- <input type="email" id="typePasswordX-2" class="form-syle form1" required/>-->
                 </div>
 
                 <div class="mb-4">
-                  <label class="label-item" for="typePasswordX-2">CHANGE PASSWORD</label>
-                  <input type="password" id="typePasswordX-2" class="form-syle form1" required/>
+                  <label class="label-item" for="typePasswordX-2">Description</label>
+                  <p>{{user_detail}}</p>
+                 <!-- <input type="password" id="typePasswordX-2" class="form-syle form1" required/>-->
                 </div>
     
     
                 <!-- login button -->
-                <button class="btn btn-dark btn-lg btn-block signup_btn" type="submit" style="border-radius:30px;  width:50%;">SUBMIT</button>
+                <!--
+                <button class="btn btn-dark btn-lg btn-block signup_btn" type="submit" style="border-radius:30px;  width:50%;">EDIT</button>-->
     
     
                 <!-- if login as social media account -->
