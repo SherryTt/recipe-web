@@ -75,7 +75,7 @@
   <!--review-->
 
   <div class="review comments">
-    <div class="c_title">Reviews & rating</div>
+    <div class="c_title">Reviews & Rating</div>
   </div>
 
   {% for review in reviewResult %}
@@ -83,8 +83,12 @@
     <div class="asd_author">
       <img src="/uerImage/{{review.picture}}" alt="">
       <span>By {{review.user}}</span>
-      <span style="font-weight: 500;">{{review.review_date}}</span>
+      
+      <span style="font-weight: 500;margin-left: 30px">{{review.review_date}}</span>
 
+    </div>
+    <div style = "margin-left: 50px;">
+    <span >{{review.review_rated}}</span>
     </div>
     <div class="com_cons">
       {{review.review_description}}
@@ -95,7 +99,37 @@
 
   </div>
   {% endfor %}
-
+{# <div style= " text-align: center;margin-bottom:60px;margin-top:30px;">
+     <button class="btn-review">ADD RATING & REVIEW</button>  
+    <a href="#"class="btn btn-primary">ADD RATING & REVIEW</a> 
+   </div> #}
+ <div class="comment_form">
+        <form action="review.php" method="get">
+            <input hidden name="id" value="{{recipe.recipe_ID}}" />
+            <h2 style ="margin-top:20px;">WRITE REVIEW</h2>
+            <p>Your rating</p>
+            <input name="rate" class="form-control rate" placeholder="0-5" type="number" max="5" min="0" step="0.1"/>
+            <p style = "margin-top:20px">Review</p>
+            <textarea name="content" class="form-control"></textarea>
+            <div style ="margin-top:20px;">
+            <button class="btn btn-primary">SUBMIT</button>
+            </div>
+        </form>
+    </div> 
+    <style>
+        .comment_form{
+            width:800px;
+            margin:0 auto;
+            padding:0 0 50px 0;
+            margin-left:100px;
+            
+        }
+        
+        .rate{
+            width:150px!important;
+        }
+    </style>
+    
   {% include "partials/footer.twig" %}
   {% include "partials/script.twig" %}
 </body>

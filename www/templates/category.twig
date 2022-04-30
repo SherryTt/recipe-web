@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+ {% include "partials/header.twig"%}
+
+
+<body>
+   {% include "partials/navigation.twig"%} 
+
+        <style>
+            .recipe_type_title{
+                width:1100px;
+                margin:0 auto;
+                height:60px;
+                line-height:60px;
+                border-bottom:3px solid #000;
+                font-size:40px;
+                margin-bottom:20px;
+            }
+            .entry-author {
+                display:flex;
+                justify-content: space-between;
+            }
+            .v_page{
+                width:500px;
+                margin:0 auto;
+                 display:flex;
+                justify-content: space-between;
+            }
+            .v_page a{
+                display:inline-block;
+                padding:10px 30px;
+                background:#000;
+                color:#fff;
+                border-radius:20px;
+                
+            }
+            .isotope-grid{
+                overflow:hidden;
+            }
+        </style>
+        <section class="ht-section hs-recipes grid">
+            <header class="recipe_type_title">
+              {{ total }}   results for "{{ cname }}"
+            </header>
+            <div class="hs-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="isotope-grid">
+                            <style>
+                            .entry-media,.entry-media img{
+                                height:200px!important;
+                                width:100%;
+                            }
+                            .entry-name{
+                                height:60px;
+                                line-height:60px;
+                                overflow:hidden;
+                            }
+                            </style>
+
+          
+
+      <div class = "container">  
+        <div class = "row">
+            {% for recipe in categoryResult %}
+                <div class = "col-md-4">
+                    <div class="card_body" >
+                            <img src="recipe_image/{{recipe.picture }}" class="card-img-top recipe_image" alt="recipe cover for {{recipe.recipe_Name}}";>
+                            <div class="card-body">
+                                <h5 class="card-title">{{recipe.recipe_Name}}</h5>
+                                <P class="card-title">{{recipe.star_rated}}</p>
+                                <P class="card-title">By {{recipe.user}}</p> 
+                                <a href="detail.php?id={{recipe.recipe_ID}}" class="btn btn-primary">View Detail</a>     
+                          </div>
+                        </div>
+                      </div>
+                  {% endfor %}
+              </div>
+          </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+     
+      
+       
+{% include "partials/footer.twig" %}
+{% include "partials/script.twig" %}
+</body>
+	
+	</html>
