@@ -26,6 +26,7 @@
             <p>Total: <span>{{recipe.recipe_total}}</span></p>
             <p>Calories: <span>{{recipe.recipe_calories}}</span></p>
             <p>Servings: <span>{{recipe.recipe_servings}}</span></p>
+             <a href="favourite.php?action=add&recipeid={{recipe.recipe_ID}}" class="btn btn-primary">Favourite</a>
           </div>
         </div>
       </div>
@@ -99,10 +100,7 @@
 
   </div>
   {% endfor %}
-{# <div style= " text-align: center;margin-bottom:60px;margin-top:30px;">
-     <button class="btn-review">ADD RATING & REVIEW</button>  
-    <a href="#"class="btn btn-primary">ADD RATING & REVIEW</a> 
-   </div> #}
+
  <div class="comment_form">
         <form action="review.php" method="get">
             <input hidden name="id" value="{{recipe.recipe_ID}}" />

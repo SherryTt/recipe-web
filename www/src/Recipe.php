@@ -38,6 +38,7 @@ class Recipe extends Database{
                     
                     INNER JOIN recipe_user
                     ON recipe.recipe_ID = recipe_user.recipe_ID
+                    
                     INNER JOIN user
                     ON user.user_ID=recipe_user.user_ID
                     WHERE 1
