@@ -408,6 +408,7 @@ h3 {
     width: 45%;
 }
 
+<<<<<<< HEAD
 .entry-media,
 .entry-media img {
     height: 200px!important;
@@ -442,4 +443,21 @@ h3 {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+=======
+/* user dashbord */
+
+.wrapTop{
+    justify-content: space-between;
+
+}
+
+.topSec{
+    justify-content: space-between;
+
+}
+
+.titlePro{
+    justify-content: center;
+    background-color: brown;
+>>>>>>> 1181d46a210ffcab7546c508f6e371b3feb88597
 }

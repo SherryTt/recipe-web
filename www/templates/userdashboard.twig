@@ -4,75 +4,49 @@
 
 <body>
   {% include "partials/navigation2.twig" %}
-  <div class="main-container" style="color: grey;">
-    <section class="vh-100" style="background-color: white">
-     <!-- <div class="container py-5 h-100"> -->
-        <div class="row  justify-content-center align-items-center h-100">
-         <!-- <div class="col-12 col-md-8 col-lg-6 col-xl-5">-->
-            <div class="card">
-            
-   
-              <div class="card-body p-5" style="text-align:center;">
-                <div class="user">
-                
-                <img class="user-img" src="/uerImage/{{items.user_image}}" style="width: 70px; height:70px;">
-                <div class="user-info">
-                <h1>Welcomback,{{items.user.name}}</h1>
-                <img class="user-detail" src="/templates/images/people.svg">
-                <img class="user-detail" src="/templates/images/heart.svg">
-                <img class="user-detail" src="/templates/images/pen.svg">
-                </div>
-                </div>  
-               
-                <!-- Account menu -->
-                  <div class="menu-container row align-items-start ">
-                    <div class="col menu"><a href="#">ACCOUNT INFO</a>
-                    
-                    </div>
-                    <div class="col menu">
-                    <a href="#">FAVORITES</a>
-                    </div>
-                    <div class="col menu">
-                      <a href="#">I MADE IT</a>
-                    </div>
-                    <div class="col menu">
-                      <a href="#">POST MY RECIPE</a>
-                    </div>
-                  </div>
+  <div class="main-container row  h-100 justify-content-around">
 
-                <div class="mb-4">
-                  <label class="label-item" for="typeEmailX-2">NAME</label>
-                  <input type="name" id="typeEmailX-2" class="form-syle form1" required/>
-                </div>
-    
-                <div class="mb-4">
-                  <label class="label-item" for="typePasswordX-2">EMAIL ADDRESS</label>
-                  <input type="email" id="typePasswordX-2" class="form-syle form1" required/>
-                </div>
-
-                <div class="mb-4">
-                  <label class="label-item" for="typePasswordX-2">CHANGE PASSWORD</label>
-                  <input type="password" id="typePasswordX-2" class="form-syle form1" required/>
-                </div>
-    
-    
-                <!-- login button -->
-                <button class="btn btn-dark btn-lg btn-block signup_btn" type="submit" style="border-radius:30px;  width:50%;">SUBMIT</button>
-    
-    
-                <!-- if login as social media account -->
-                <!--<button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;" type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
-                <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;" type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button> -->
-    
-              </div>
+  <!--Top section/img/welcomeMSG?follower/description-->
+    <div class="wrapTop">
+      <div class="topSec d-flex align-items-center m-4 px-5 pt-5">
+        <div class="userDetail">
+          <img class="user-img" src="uerImage/{{user_image}}" style="width:200px;height:200px;border-radius: 50%;">
+            <div class="followerInfo d-flex justify-content-center">
+              <img class="user_follower" src="/templates/images/people.svg" style="width:25px;height:25px;">
+              <p style="font-size: 25px;">{{user_follower}}</p>
             </div>
-          </div>
+        </div>
+          
+        <div class="msg justify-content-center p-5" style="width: 300px;">
+          <h1>Welcomback,{{name}}</h1>
         </div>
       </div>
-    </section>
+        <div class="mb-4"style="max-width:80%; padding-left:8em;" >
+          <h2 style="text-decoration:underline">Description</h2>
+          <p>{{user_detail}}</p>
+        </div>
+    </div>
 
 
+    <!-- Profile info -->
+      <div class="profile mb-4 mt-5 justify-content-center mb-5" style="max-width: fit-content;">
 
+        <div class="profile_title mb-5" style="border: #5C4033;">
+          <div class="titlePro" style="text-align: center;border-style:outset;"><h2>Profile</h2></div>
+        </div>
+
+          <div class="name  d-flex align-items-center justify-content-center mb-5">
+            <div style="width: 150px; text-align:center;">NAME</div>
+            <div style="width: 115px;"><h3>{{name}}</h3></div>
+            <h3></h3>
+          </div>
+    
+          <div class="mb-4  d-flex align-items-center justify-content-center mb-5">
+            <div style="width: 150px;">EMAIL ADDRESS</div>
+            <div style="width: 150px;"><h3>{{email}}</h3></div>
+          </div>
+
+      </div>
   </div>
   {% include "partials/footer.twig" %}
   {% include "partials/script.twig" %}
