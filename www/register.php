@@ -2,6 +2,7 @@
 require("vendor/autoload.php");
 
 use textreview\Account;
+use textreview\Session;
 
 $account = new Account();
 
@@ -21,6 +22,12 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ) {
     $result = $account -> create( $user_name, $user_email, $user_password,$confirm_pass);
     header("Location:login.php");
 
+    if( $result["success"] == true){
+
+      Session :: set("email",$result["email"]);
+      Session :: set("account_id",$result["id"]);
+
+    }
     }
   }
 

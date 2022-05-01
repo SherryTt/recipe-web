@@ -1,5 +1,9 @@
 <?php
+session_start();
 require('vendor/autoload.php');
+
+//print_r($_SESSION);
+//exit;
 
 use textreview\Recipe;
 
@@ -17,6 +21,9 @@ $sliderResult = $recipe ->getSlider();
 $loader = new \Twig\Loader\FilesystemLoader("templates");
 
 $twig = new Twig\Environment($loader,["cache" => false]);
+
+
+
 
 echo $twig -> render(
   "home.twig",

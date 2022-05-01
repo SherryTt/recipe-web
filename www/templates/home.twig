@@ -6,36 +6,20 @@
   <body>
     {% include "partials/navigation.twig"%} 
 
-<div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    
-    {% for slider in sliderResult %}
-    <div class="carousel-item {{slider.recipe_ID==1?'active':''}}" data-bs-interval="10000">
-      <img src="/recipe_image/{{slider.filename}}" class="d-block w-100" style="height: 599px;" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      <div class = "slider_name_color">
-        <h5>{{slider.recipe_Name}}</h5>
-        </div>
-      </div>
-    </div>
-    {% endfor %}
-    
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"  data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+<!--picture-->
+  {% for slider in sliderResult %}      
+<div >
 
+ 
+      <img src="/recipe_image/{{ slider.filename }}" style="width:100%;height:599px;">
+
+        <h5 style ="text-align: center;font-size: 30px;">{{slider.recipe_Name}}</h5>
+    
+</div>
+ {% endfor %} 
+
+
+ <!--Line-->
 <div class="Find-recipe-line" >
   <div class = "recipe-left-line"></div>
   <h3>&nbsp;&nbsp;Find the Recipe&nbsp;&nbsp;</h3>
@@ -99,7 +83,9 @@
                                 <div class="thumb"><img src="/uerImage/{{user.picture}}" alt="" style="width:200px;height:200px;border-radius: 50%;"></div>
                             </div>
                             <h3 class="entry-name">{{user.name}}</h3>
+                            <div style = "font-family: fantasy;">
                             <p class="entry-position">{{user.user_detail | slice(0,500)}}</p>
+                            </div>
                             <div class="entry-social">
                             
                             </div>

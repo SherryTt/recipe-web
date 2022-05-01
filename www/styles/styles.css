@@ -1,4 +1,5 @@
-html,body {
+html,
+body {
     min-height: 100vh;
     display: grid;
     font-family: "Lato", sans-serif;
@@ -12,20 +13,19 @@ html,body {
     background-color: #5C4033;
 }
 
-
 .logo {
     width: 220px;
     height: 200px;
     overflow: hidden;
-    position:relative;
+    position: relative;
 }
 
 .logo img {
     width: 305px;
     height: auto;
-    position:absolute;
+    position: absolute;
     top: -50px;
-    left:-45px;
+    left: -45px;
 }
 
 .sidenav {
@@ -41,7 +41,8 @@ html,body {
     padding-top: 60px;
 }
 
-.sidenav a ,h3{
+.sidenav a,
+h3 {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -50,9 +51,9 @@ html,body {
     transition: 0.3s;
 }
 
-.sidebar-title{
+.sidebar-title {
     font-weight: bold;
-    text-decoration:underline;
+    text-decoration: underline;
 }
 
 .sidenav a:hover {
@@ -76,14 +77,11 @@ html,body {
     }
 }
 
-@media screen and (max-width: 450px){
-
+@media screen and (max-width: 450px) {
     .search-field {
         width: 30vh;
     }
-
 }
-
 
 .nav-item1 {
     font-size: 20px;
@@ -410,6 +408,42 @@ html,body {
     width: 45%;
 }
 
+<<<<<<< HEAD
+.entry-media,
+.entry-media img {
+    height: 200px!important;
+    width: 100%;
+}
+
+.entry-name {
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+}
+
+.isotope-grid {
+    overflow: hidden;
+}
+
+.v_page a {
+    display: inline-block;
+    padding: 10px 30px;
+    background: #000;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.entry-author {
+    display: flex;
+    justify-content: space-between;
+}
+
+.v_page {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+=======
 /* user dashbord */
 
 .wrapTop{
@@ -425,4 +459,5 @@ html,body {
 .titlePro{
     justify-content: center;
     background-color: brown;
+>>>>>>> 1181d46a210ffcab7546c508f6e371b3feb88597
 }

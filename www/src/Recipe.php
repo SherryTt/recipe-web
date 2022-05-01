@@ -21,27 +21,27 @@ class Recipe extends Database{
   public function getItems(){
   {
     $query = "
-    SELECT
-        recipe.recipe_ID,
-        recipe_Name,
-        star_rated,
-        recipe_image.image_ID,
-        recipe_user.user_ID,
-        user.name AS user,
-        image.filename AS picture
-        FROM recipe
-        INNER JOIN recipe_image
-        ON recipe.recipe_ID = recipe_image.image_ID
-        
-        INNER JOIN image
-        ON recipe_image.image_ID = image.image_ID
-        
-        INNER JOIN recipe_user
-        ON recipe.recipe_ID = recipe_user.recipe_ID
-        INNER JOIN user
-        ON user.user_ID=recipe_user.user_ID
-        WHERE 1
-            ";
+                SELECT
+                    recipe.recipe_ID,
+                    recipe_Name,
+                    star_rated,
+                    recipe_image.image_ID,
+                    recipe_user.user_ID,
+                    user.name AS user,
+                    image.filename AS picture
+                    FROM recipe
+                    INNER JOIN recipe_image
+                    ON recipe.recipe_ID = recipe_image.image_ID
+                    
+                    INNER JOIN image
+                    ON recipe_image.image_ID = image.image_ID
+                    
+                    INNER JOIN recipe_user
+                    ON recipe.recipe_ID = recipe_user.recipe_ID
+                    INNER JOIN user
+                    ON user.user_ID=recipe_user.user_ID
+                    WHERE 1
+                        ";
  
 
     try
@@ -84,19 +84,18 @@ class Recipe extends Database{
 public function getSlider(){
   {
    
-    $query = "
+    $query =  "
     SELECT 
-        recipe_ID,
+        recipe_ID, 
         recipe_Name,
         star_rated,
-        recipe_description,
         filename 
-        from recipe 
-        JOIN image ON recipe_ID=image_ID
-        GROUP BY recipe_ID
-        ORDER BY  RAND()
+        From recipe 
+        JOIN image ON recipe_ID=image_ID 
+        ORDER BY RAND() DESC LIMIT 1
+        
         ";
-
+        
     try{
       $statement =$this -> dbconnection -> prepare($query);
       if(!$statement){

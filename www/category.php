@@ -20,7 +20,10 @@ $twig = new Twig\Environment($loader,["cache" => false]);
 $total = count($categoryResult);
 
 echo $twig->render(
-    'category.twig',['total'=>$total, "categoryResult"=>$categoryResult,"cname"=>$cname]);
+    'category.twig',['total'=>$total,
+    "page_title" => "MyCategory", 
+    "categoryResult"=>$categoryResult,
+    "cname"=>$cname]);
 
 
 ?>
