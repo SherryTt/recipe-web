@@ -17,6 +17,10 @@ if( $_SERVER["REQUEST_METHOD"] == "POST" ) {
     $result = $account -> login( $user_email, $user_password );
     if( $result["success"] == true ) {
       Session::set("email", $user_email);
+      Session::set("name", $result["name"]);
+      Session::set("user_image", $result["user_image"]);
+      Session::set("user_follower", $result["user_follower"]);
+      Session::set("user_detail", $result["user_detail"]);
       Session::set("account_id", $result["user_ID"] );
       header("Location:userdashboard.php");
     }

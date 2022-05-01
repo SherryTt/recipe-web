@@ -9,7 +9,7 @@
 <!--Recipe-->
 	<div class = "container">
 
-		<h3 class="m-4">{{total}} items matches results for "{{search_term}}"</h3>
+		<h2 class="m-4">{{total}} items matches results for "{{search_term}}"</h2>
 
 	{% if total == 0%}
 		<div class = "text-center">
@@ -19,7 +19,7 @@
 	
 	<div class = "row">
 		{% for item in result %}
-			<div class = "d-block m-4 text-center">
+			<div class = "d-flex col-md-4 my-5 text-center">
 			
 				<div class="card_body" >
 					{{noResult}}
