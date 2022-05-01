@@ -1,4 +1,5 @@
 <?php
+
 namespace textreview;
 
 // method to initialise session

@@ -22,7 +22,9 @@ class Review extends Database{
 
 
 public function getNewReview( $content,$rate,$recipeid ){
-$userid =22;
+
+ 
+$userid = $_SESSION['account_id'] ;
 $times = date("Y-m-d H:i:s");
 
 $query1 = "
