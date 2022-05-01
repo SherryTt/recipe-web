@@ -10,11 +10,11 @@
   {% for slider in sliderResult %}      
 <div >
 
- 
+      <a href="/detail.php?id={{slider.recipe_ID}}">
       <img src="/recipe_image/{{ slider.filename }}" style="width:100%;height:599px;">
-
+      </a>
         <h5 style ="text-align: center;font-size: 30px;">{{slider.recipe_Name}}</h5>
-    
+      
 </div>
  {% endfor %} 
 
